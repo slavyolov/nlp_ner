@@ -15,7 +15,7 @@ def setup_logging(config: ConfigTree) -> None:
 
     """
     logging.basicConfig(
-        level=logging.INFO,
+        level=config.logging["level"],
         stream=sys.stdout,
         format="%(asctime)s - %(name)s - [%(levelname)s] - [%(filename)s:%(lineno)d] [%(funcName)s] - %(message)s",
     )

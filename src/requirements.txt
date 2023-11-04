@@ -1,1 +1,14 @@
 pyhocon==0.3.59
+pandas==2.0.3
+bs4==4.12.2
+requests==2.31.0
+lxml==4.9.3
+urlextract==1.8.0
+contractions==0.1.73
+nltk==3.8.1
+keras==2.14.0
+spacy==3.7.2
+typing_extensions==4.5.0
+git+https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.0.0/en_core_web_sm-3.0.0.tar.gz
+label-studio==1.9.1
+IPython==8.17.2
