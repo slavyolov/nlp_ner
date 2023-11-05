@@ -3,7 +3,7 @@ Process text data for model training or predictions
 """
 import bs4
 import pandas as pd
-from transformations.abstract_ransformer import AbstractTransformer
+from transformations.abstract_transformer import AbstractTransformer
 import logging
 from urlextract import URLExtract
 import nltk

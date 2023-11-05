@@ -2,7 +2,7 @@
 Model training
 """
 import spacy
-from transformations.abstract_ransformer import AbstractTransformer
+from transformations.abstract_transformer import AbstractTransformer
 import logging
 import random
 from spacy.training.example import Example
