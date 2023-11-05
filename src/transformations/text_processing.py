@@ -1,21 +1,19 @@
-# Step 1 get all text from the URLS
+"""
+Process text data for model training or predictions
+"""
 import bs4
 import pandas as pd
-import requests
 from transformations.abstract_ransformer import AbstractTransformer
 import logging
 from urlextract import URLExtract
-from collections import Counter
 import nltk
 import re
-from tqdm import tqdm # loading bar
 from bs4 import BeautifulSoup
 from bs4.element import Comment
 import urllib.request
 
 
 nltk.download('punkt')
-
 logger = logging.getLogger(__name__)
 
 
@@ -29,7 +27,8 @@ class ProcessTextData(AbstractTransformer):
         self.input_df["texts"] = self.input_df["texts"].apply(lambda x: self._remove_intervals(x))
         self.input_df["texts"] = self.input_df["texts"].apply(lambda x: self._remove_urls(x))
         self.input_df["texts"] = self.input_df["texts"].apply(lambda x: self._remove_characters(x))
-        self.input_df["texts"] = self.input_df["texts"].apply(lambda x: self.replace_multiple_intervals_with_single_interval(x))
+        self.input_df["texts"] = self.input_df["texts"].apply(lambda x:
+                                                              self.replace_multiple_intervals_with_single_interval(x))
 
         return self.input_df
 
@@ -151,5 +150,3 @@ class ProcessTextData(AbstractTransformer):
     @staticmethod
     def replace_multiple_intervals_with_single_interval(text: str):
         return re.sub(' +', ' ', text)
-
-

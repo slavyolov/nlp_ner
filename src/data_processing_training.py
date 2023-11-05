@@ -34,6 +34,6 @@ if __name__ == '__main__':
     texts = texts[texts["texts"] != 'no_text_returned']
 
     write_text_to_file(path=Path(Path(__file__).parents[1], config.tables.intermediate.texts),  df=texts)
-    texts.to_csv(path=Path(Path(__file__).parents[1], 'data/intermediate/texts.csv'), header=None,
+    texts.to_csv(path_or_buf=Path(Path(__file__).parents[1], 'data/intermediate/texts.csv'), header=None,
                  index=None, sep=',', mode='w')
     logger.info("process completed!")
