@@ -166,3 +166,4 @@ cython_debug/
 /data/
 /src/local_development/
 /.run/
+/.project_log_files/
