@@ -15,7 +15,7 @@ logger = logging.getLogger(__name__)
 
 if __name__ == '__main__':
     # Invoke the configuration file :
-    config_file = "./local_development/conf.json"
+    config_file = Path(Path(__file__).parents[1], "local_development/conf.json")
     config = ConfigFactory.parse_file(config_file)
 
     # Setup logger
@@ -33,7 +33,7 @@ if __name__ == '__main__':
     texts = text_transformer.run()
     texts = texts[texts["texts"] != 'no_text_returned']
 
-    write_text_to_file(path=Path(Path(__file__).parents[1], config.tables.intermediate.texts),  df=texts)
-    texts.to_csv(path_or_buf=Path(Path(__file__).parents[1], 'data/intermediate/texts.csv'), header=None,
+    write_text_to_file(path=Path(Path(__file__).parents[2], config.tables.intermediate.texts),  df=texts)
+    texts.to_csv(path_or_buf=Path(Path(__file__).parents[2], 'data/intermediate/texts.csv'), header=None,
                  index=None, sep=',', mode='w')
     logger.info("process completed!")

@@ -1,10 +1,7 @@
-# Setup logging
-import os
+""" Setup project logger """
 import sys
 import logging
 from pyhocon import ConfigTree
-from pathlib import Path
-from datetime import datetime
 
 
 def setup_logging(config: ConfigTree) -> None:

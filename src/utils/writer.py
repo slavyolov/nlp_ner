@@ -1,4 +1,4 @@
-import numpy as np
+""" Write text files to file store system"""
 
 
 def write_text_to_file(path, df):
