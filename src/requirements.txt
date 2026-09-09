@@ -2,7 +2,7 @@ pyhocon==0.3.59
 pandas==2.0.3
 bs4==4.12.2
 requests==2.31.0
-lxml==4.9.3
+lxml==6.1.0
 urlextract==1.8.0
 contractions==0.1.73
 nltk>=3.10.3
